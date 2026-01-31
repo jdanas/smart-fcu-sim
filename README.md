@@ -1,4 +1,5 @@
 # Smart FCU Simulator
+<img width="1562" height="989" alt="image" src="https://github.com/user-attachments/assets/09e93efb-e48e-4e22-8403-81e1a81ebed6" />
 
 Non-intrusive Plug-and-Play Adaptive HVAC Control System - Research Dashboard Prototype
 
