@@ -70,7 +70,7 @@ async def chat(request: ChatRequest) -> ChatResponse:
 
         # Call Gemini API
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-3-flash-preview",
             contents=contents,
             config={
                 "system_instruction": SYSTEM_PROMPT,
@@ -93,5 +93,5 @@ async def chat_status():
     has_key = bool(settings.gemini_api_key and settings.gemini_api_key.strip())
     return {
         "available": has_key,
-        "model": "gemini-2.0-flash",
+        "model": "gemini-3-flash-preview",
     }
