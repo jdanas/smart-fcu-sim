@@ -17,7 +17,7 @@ COPY pyproject.toml uv.lock* ./
 FROM base AS development
 
 # Install all dependencies including dev
-RUN uv sync --frozen --no-cache
+RUN uv sync --no-cache
 
 # Copy source code
 COPY . .
@@ -35,7 +35,7 @@ CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "800
 FROM base AS production
 
 # Install only production dependencies
-RUN uv sync --frozen --no-cache --no-dev
+RUN uv sync --no-cache --no-dev
 
 # Copy source code
 COPY . .

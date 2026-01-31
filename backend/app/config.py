@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
+from typing import Optional
 
 
 class Settings(BaseSettings):
@@ -11,6 +12,9 @@ class Settings(BaseSettings):
     sensor_update_interval: float = 5.0  # seconds
     prediction_horizon_minutes: int = 15
     discovery_check_interval: float = 30.0  # seconds
+
+    # Gemini API
+    gemini_api_key: Optional[str] = None
 
     class Config:
         env_file = ".env"

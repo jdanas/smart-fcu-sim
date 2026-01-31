@@ -92,3 +92,35 @@ export async function updateAdaptiveMode(zoneId: string, adaptive_mode: boolean)
   if (!response.ok) throw new Error('Failed to update adaptive mode');
   return response.json();
 }
+
+// Chat API
+export interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
+
+export interface ChatResponse {
+  response: string
+  error: string | null
+}
+
+export interface ChatStatus {
+  available: boolean
+  model: string
+}
+
+export async function sendChatMessage(messages: ChatMessage[]): Promise<ChatResponse> {
+  const response = await fetch(`${API_BASE_URL}/api/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages }),
+  });
+  if (!response.ok) throw new Error('Failed to send message');
+  return response.json();
+}
+
+export async function getChatStatus(): Promise<ChatStatus> {
+  const response = await fetch(`${API_BASE_URL}/api/chat/status`);
+  if (!response.ok) throw new Error('Failed to get chat status');
+  return response.json();
+}

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Header } from "@/components/layout/Header"
 import { ZonePanel } from "@/components/dashboard/ZonePanel"
 import { AlertFeed, type AlertItem } from "@/components/dashboard/AlertFeed"
+import { ChatBot } from "@/components/chat/ChatBot"
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from "@/hooks/use-toast"
 import { useWebSocket, type WebSocketMessage } from "@/hooks/useWebSocket"
@@ -155,6 +156,7 @@ function App() {
       </main>
 
       <Toaster />
+      <ChatBot />
     </div>
   )
 }

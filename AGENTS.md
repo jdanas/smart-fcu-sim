@@ -154,6 +154,8 @@ export function ZonePanel({ zone, onUpdate }: ZonePanelProps) {
 - `GET /api/devices` - List devices (?zone_id=)
 - `GET /api/sensors/{zone_id}/readings` - Sensor readings
 - `GET /api/predictions/{zone_id}/latest` - Latest prediction
+- `POST /api/chat` - AI assistant chat (requires GEMINI_API_KEY)
+- `GET /api/chat/status` - Check if chat is available
 - `WS /ws/sensors` - Real-time data stream
 - `GET /health` - Health check
 

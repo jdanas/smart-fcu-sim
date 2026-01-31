@@ -15,6 +15,7 @@ from app.routers import (
     predictions_router,
     websocket_router,
 )
+from app.routers.chat import router as chat_router
 from app.routers.websocket import (
     broadcast_sensor_reading,
     broadcast_device_event,
@@ -330,6 +331,7 @@ app.include_router(devices_router)
 app.include_router(sensors_router)
 app.include_router(predictions_router)
 app.include_router(websocket_router)
+app.include_router(chat_router)
 
 
 @app.get("/health")
